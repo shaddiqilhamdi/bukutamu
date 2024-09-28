@@ -118,6 +118,7 @@ function closeGuestForm() {
 }
 
 // Placeholder function for form submission
+/*
 function submitForm() {
     // Close the form overlay
     closeGuestForm();
@@ -129,3 +130,4 @@ function submitForm() {
         text: 'Data tamu berhasil disimpan!',
     });
 }
+*/
