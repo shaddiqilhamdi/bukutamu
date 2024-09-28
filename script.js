@@ -1,6 +1,79 @@
 // SweetAlert on Form Submit
-document.getElementById("bukuTamuForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent default form submission
+document.getElementById("guestForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // Prevent default form submission
+
+    const submitBtn = document.getElementById('submitBtn');
+    const loadingIcon = document.getElementById('loading'); // Mendeklarasikan loadingIcon
+    const nama = document.getElementById('namaLengkap').value;
+    const whatsapp = document.getElementById('whatsapp').value;
+    const instansi = document.getElementById('instansi').value;
+    const alamat = document.getElementById('alamat').value;
+    const tujuan = document.getElementById('tujuan').value;
+    const keperluan = document.getElementById('keperluan').value;
+    const tanggalMasuk = document.getElementById('tanggalMasuk').value;
+    const jamMasuk = document.getElementById('jamMasuk').value;
+
+    submitBtn.disabled = true;
+    loadingIcon.style.display = 'block'; 
+
+    // Mengirim data ke Google Apps Script Web App
+    fetch('https://script.google.com/macros/s/AKfycbz_7Uz8puE52dLPiCNq2fsEWlfAKs2XOQeqIm802igK6Sr_ppL_2ES5EL--1zgZDxe4xg/exec', { // Ganti dengan URL Web App Anda
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({
+            'Nama Lengkap': nama,
+            'WhatsApp': whatsapp,
+            'Instansi': instansi,
+            'Alamat': alamat,
+            'Tujuan': tujuan,
+            'Keperluan': keperluan,
+            'Tanggal Masuk' : tanggalMasuk,
+            'Jam Masuk' : jamMasuk
+        })
+    })
+    .then(response => response.json()) 
+    .then(data => {
+        // Menampilkan respon dari server
+        submitBtn.disabled = false;
+        loadingIcon.style.display = 'none'; // Menyembunyikan loading spinner
+
+        // Tutup form setelah submit berhasil
+        closeGuestForm();
+
+        if (data.result === 'success') {
+            // Jika berhasil, tampilkan pesan berhasil
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil',
+                text: 'Data tamu berhasil disimpan!',
+            }).then(() => {
+                document.getElementById('guestForm').reset(); // Reset form setelah sukses
+            });
+        } else {
+            // Jika gagal, tampilkan pesan gagal
+            Swal.fire({
+                icon: 'error',
+                title: 'Gagal',
+                text: 'Terjadi kesalahan saat menyimpan data.'
+            });
+        }
+    })
+    .catch(error => {
+        // Penanganan error jika fetch gagal
+        closeGuestForm(); // Tutup form meskipun terjadi error
+        console.error('Error:', error);
+        loadingIcon.style.display = 'none'; // Menyembunyikan loading spinner
+        submitBtn.disabled = false;
+
+        // Tampilkan pesan error
+        Swal.fire({
+            icon: 'error',
+            title: 'Gagal',
+            text: 'Terjadi kesalahan saat menyimpan data: ' + error.message
+        });
+    });
 
     // Trigger SweetAlert
     Swal.fire({
@@ -9,10 +82,6 @@ document.getElementById("bukuTamuForm").addEventListener("submit", function(even
         icon: 'success',
         confirmButtonText: 'OK'
     });
-
-    // Close modal after submission
-    var modal = bootstrap.Modal.getInstance(document.getElementById("guestForm"));
-    modal.hide();
 });
 
 // Open Modal when clicking "Buku Tamu" button
@@ -25,6 +94,21 @@ document.getElementById("openFormBtn").addEventListener("click", function() {
 function openGuestForm() {
     document.getElementById('guestFormOverlay').classList.add('active');
     document.body.classList.add('modal-open');
+
+    fetchTujuan(); // Panggil untuk mengisi dropdown
+
+    // Mengambil tanggal dan jam saat form dibuka
+    const today = new Date();
+    
+    // Format tanggal (YYYY-MM-DD)
+    const tanggalMasuk = today.toISOString().split('T')[0];
+    
+    // Format jam (HH:MM)
+    const jamMasuk = today.toTimeString().split(' ')[0];
+
+    // Isi input tanggal dan jam secara otomatis
+    document.getElementById('tanggalMasuk').value = tanggalMasuk;
+    document.getElementById('jamMasuk').value = jamMasuk;
 }
 
 // Function to close the form overlay and remove blur
