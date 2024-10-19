@@ -10,26 +10,24 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     
     <!-- SweetAlert CSS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <link rel="icon" href="asset/Logo_PLN.png" type="image/png">
+    <link rel="icon" href="img/icons/Logo_pln.png" type="image/png">
 
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg bg-light sticky-top"
-         style="box-shadow: 0 0.1px 1px rgb(0, 0, 0, 1);">
+    <nav class="navbar navbar-expand-lg bg-light sticky-top">
         <div class="container">
             <div class="d-flex align-items-center">
-                <img src="asset/Logo_PLN.png" alt="Logo_PLN" height="60">
+                <img src="img/icons/Logo_pln.png" alt="Logo PLN" height="60">
                 <div class="d-flex flex-column ms-3">
-                    <a class="navbar-brand" href="#">Buku Tamu
+                    <a class="navbar-brand text-white" href="#">Buku Tamu
                         <br>
                         <small>UID Jakarta Raya</small>
-                        </a>
                     </a>
                 </div>
             </div>
@@ -37,127 +35,157 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="nav nav-underline navbar-nav ms-auto flex-lg-row flex-column text-center">
-                    <li class="nav nav-item">
-                        <a class="nav-link a active text-white" aria-current="page" href="#home">Home</a>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="#home">Home</a>
                     </li>
-                    <li class="nav nav-item">
+                    <li class="nav-item">
                         <a class="nav-link text-white" href="#about">About</a> 
                     </li>
-                    <li class="nav nav-item">
+                    <li class="nav-item">
                         <a class="nav-link text-white" href="#contact">Contact</a>
                     </li>
                 </ul>
-                <a href="login.html" class="btn btn-primary ms-lg-3 mt-3 mt-lg-0"
-                   style="background-color: #1291A6; border-color: #1291A6; box-shadow: #007b8f;">Login Admin</a>
+                <a href="page/dashboard/login.html" class="btn btn-primary ms-lg-3 mt-3 mt-lg-0" target="_blank"
+                   style="background-color: #1291A6; border-color: #1291A6;">
+                    Login Admin
+                </a>
             </div>
         </div>
     </nav>
 
     <!-- Content -->
-    <section id="home"
-             style="height: 90vh; display: flex; background-color:#007b8f;">
-        <div class="container d-flex align-items-center">
-            <div class="row align-items-center">
-                <div class="col-md-5">
-                    <h1 class="text-white custom-heading2">Selamat Datang</h1>
-                    <h1 class="text-white custom-heading">di PLN UID JAYA</h1>
-                    <h5 class="col-md-10 text-white">Silakan isi form berikut untuk melanjutkan kunjungan Anda. 
-                     Data Anda akan dicatat untuk keperluan registrasi</h5>
-                     <br><br><br><br><br>
-                    <div class="container" style="padding-bottom: 25px;">
-                     <button class="btn btn-white btn-lg" style="color: #007b8f; background-color: white; border: none;" onclick="openGuestForm()">Buku Tamu</button>
+    <section id="home" >
+        <div class="container-fluid" >
+                <div class="container d-flex align-items-center" >
+                    <div class="row align-items-center">
+                        <div class="row" style="align-items: center; ">
+                            <div class="col-md-5">
+                                <h1 class="text" ><SMall>Selamat Datang</SMall></h1>
+                                <h1 class="text" >di <STrong>PLN UID JAYA</STrong></h1>
+                                <h5 class="col-md-10">
+                                    Silakan isi form berikut untuk melanjutkan kunjungan Anda.
+                                    Data Anda akan dicatat untuk keperluan registrasi
+                                </h5>
+                                <br><br>
+                                <button type="button" class="btn btn-white btn-lg" onclick="openGuestForm()">
+                                    <Small>BUKU TAMU </Small>
+                                    <i class="bi bi-arrow-right-circle-fill" style="padding-left: 30px; font-size: 24px;"></i>
+                                </button>
+                                
+                            </div>
+                            
+                            <div class="col-md-7">
+                                <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner" >
+                                        <div class="carousel-item active" data-bs-interval="3000">
+                                            <img src="img/photos/unsplash-4.jpg" alt="image1" class="d-block w-100" >
+                                        </div>
+                                        <div class="carousel-item" data-bs-interval="3000">
+                                            <img src="img/photos/unsplash-5.jpg" alt="image2" class="d-block w-100" >
+                                        </div>
+                                        <div class="carousel-item" data-bs-interval="3000">
+                                            <img src="img/photos/Unsplash-6.jpg" alt="image3" class="d-block w-100" >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+        </div>
+
+        <div class="container-fluid">
+            <div id="scoreCard" class="row row-about">
+                <div class="col-md-3">
+                    <div class="stat-box text-center" >
+                        <div class="icon">
+                            <i class="bi bi-calendar-fill"></i>
+                        </div>
+                        <p><span id="totalTamuBulanIni">0</span></p>
+                        <h6>Total Tamu</h6>
                     </div>
                 </div>
-
-                <div class="col-md-7">
-                    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <div class="col-md-3">
+                    <div class="stat-box text-center">
+                        <div class="icon">
+                            <i class="bi bi-bar-chart-fill"></i>
                         </div>
-                        <div class="carousel-inner">
-                            <!-- Slide 1 -->
-                            <div class="carousel-item active" data-bs-interval="3000">
-                                <img src="asset/image1.jpg" class="d-block w-100" alt="image1">
-                                <div class="carousel-caption d-none d-md-block"></div>
-                            </div>
-                            <!-- Slide 2 -->
-                            <div class="carousel-item" data-bs-interval="3000">
-                                <img src="asset/image1.jpg" class="d-block w-100" alt="image2">
-                                <div class="carousel-caption d-none d-md-block"></div>
-                            </div>
-                            <!-- Slide 3 -->
-                            <div class="carousel-item" data-bs-interval="3000">
-                                <img src="asset/image1.jpg" class="d-block w-100" alt="image3">
-                                <div class="carousel-caption d-none d-md-block"></div>
-                            </div>
+                        <p><span id="rataRataPerHari">0</span></p>
+                        <h6>Rata-rata</h6>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-box text-center" >
+                        <div class="icon">
+                            <i class="bi bi-person-check-fill"></i>
                         </div>
+                        <p><span id="tamuHariIni">0</span></p>
+                        <h6>Hari Ini</h6>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Overlay Form -->
-    <div id="guestFormOverlay">
+    <!-- Form Section (Now included within index.html) -->
+    <div id="guestFormModal" class="modal">
         <div class="form-container">
-            <h5></h5>
             <form id="guestForm">
                 <div class="mb-3">
                     <label for="namaLengkap" class="form-label">Nama Lengkap</label>
-                    <input type="text" class="form-control" id="namaLengkap" placeholder="Masukkan Nama Lengkap" required>
+                    <input type="text" class="form-control" id="namaLengkap" name="namaLengkap" placeholder="Masukkan Nama Lengkap" required>
                 </div>
                 <div class="mb-3">
-                    <label for="whatsapp" class="form-label">WhatsApp</label>
-                    <input type="text" class="form-control" id="whatsapp" placeholder="Masukkan No. WhatsApp" required>
+                    <label for="ponsel" class="form-label">Nomor Ponsel</label>
+                    <input type="text" class="form-control" id="ponsel" name="ponsel" placeholder="Masukkan nomor ponsel aktif" required>
                 </div>
                 <div class="mb-3">
                     <label for="instansi" class="form-label">Instansi</label>
-                    <input type="text" class="form-control" id="instansi" placeholder="Masukkan Nama Instansi" required>
+                    <input type="text" class="form-control" id="instansi" name="instansi" placeholder="Masukkan Nama Instansi" required>
                 </div>
                 <div class="mb-3">
                     <label for="alamat" class="form-label">Alamat</label>
-                    <textarea class="form-control" id="alamat" rows="2" placeholder="Masukkan Alamat" required></textarea>
+                    <textarea class="form-control" id="alamat" name="alamat" rows="2" placeholder="Masukkan Alamat" required></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="tujuan" class="form-label">Tujuan</label>
-                    <select class="form-select" id="tujuan" required>
+                    <select class="form-select" id="tujuan" name="tujuan" required>
                         <option selected disabled>Pilih Tujuan Kunjungan</option>
-                        <option value="Pelayanan">Pelayanan</option>
-                        <option value="Teknisi">Teknisi</option>
-                        <option value="Administrasi">Administrasi</option>
                     </select>
                 </div>
                 <div class="mb-3">
                     <label for="keperluan" class="form-label">Keperluan</label>
-                    <textarea class="form-control" id="keperluan" rows="2" placeholder="Masukkan Keperluan" required></textarea>
+                    <textarea class="form-control" id="keperluan" name="keperluan" rows="2" placeholder="Masukkan Keperluan" required></textarea>
                 </div>
-                <div class="text-end">
-                    <button type="button" class="btn btn-secondary" onclick="closeGuestForm()">Batal</button>
-                    <button type="button" class="btn btn-primary" onclick="submitForm()">Submit</button>
+                
+                <div class="d-flex justify-content-between">
+                    <button type="button" class="btn btn-secondary" onclick="closeGuestForm()">Batal</i></button>
+                    <div class="text-end">
+                        <button type="reset" class="btn btn-warning" onclick="clearForm()">Reset</button>
+                        <button type="submit" id="submitBtn" value="submit" class="btn btn-primary">Submit
+                            <span id="loading" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                        </button>
+                    </div>
                 </div>
-
             </form>
         </div>
     </div>
 
-    <section id="about"
-             class="about-section" style="height: auto; background-color: whitesmoke; ">
+    <section id="about" class="about-section">
+        
         <div class="container">
             <div class="row">
-                <div class="col-md-6" style="padding-bottom: 25px;">
-                    <div class="image-container" style="width: 100%; height: 30vh; overflow: hidden;">
-                        <img src="asset/image1.jpg" class="img-fluid" alt="image_about" 
-                        style="width: auto; height: auto; object-fit: cover; align-content: center;">
+                <div class="col-md-6">
+                    <div class="image-container" >
+                        <img src="img/photos/image1.jpg" class="img-fluid" alt="image_about"
+                        style="height: 300px; object-fit: cover;">
                     </div>
                 </div>
 
                 <div class="col-md-6 d-flex flex-column justify-content-start">
-                    <h2> Buku Tamu PLN UID Jakarta Raya</h2>
+                    <h2> <strong>Buku Tamu </strong>PLN UID Jakarta Raya</h2>
                     <p>
                     Aplikasi Buku Tamu, PLN UID Jakarta Raya bertujuan untuk meningkatkan efisiensi dan kemudahan dalam pengelolaan kunjungan.
                     Setiap tamu yang berkunjung ke kantor PLN UID Jakarta Raya akan diminta untuk mengisi data secara digital melalui aplikasi ini, 
@@ -165,43 +193,15 @@
                     Aplikasi ini menjadi solusi modern untuk pengelolaan kunjungan di era digital.
                     </p>
                 </div>
-                </div>
-            <div class="row mt-5">
-                <!-- Box 1: Total Tamu -->
-                <div class="col-md-4 d-flex justify-content-center" style="padding-bottom: 15px;">
-                    <div class="stat-box text-center" style="background-color: whitesmoke; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); width: 100%;">
-                        <div class="icon" style="font-size: 36px; color: #17a2b8;">
-                            <i class="bi bi-people-fill"></i>
-                        </div>
-                        <p style="font-size: 32px; font-weight: bold; color: #000;">1500</p>
-                        <h6 style="color: #000;">Total Tamu</h6>
-                    </div>
-                </div>
-                <div class="col-md-4 d-flex justify-content-center" style="padding-bottom: 15px;">
-                    <div class="stat-box text-center" style="background-color:whitesmoke; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); width: 100%;">
-                        <div class="icon" style="font-size: 36px; color: #17a2b8;">
-                            <i class="bi bi-calendar-event"></i>
-                        </div>
-                        <p style="font-size: 32px; font-weight: bold; color: #000;">120</p>
-                        <h6 style="color: #000;">Rata-rata</h6>
-                    </div>
-                </div>
-                <div class="col-md-4 d-flex justify-content-center" style="padding-bottom: 15px;">
-                    <div class="stat-box text-center" style="background-color: whitesmoke; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); width: 100%;">
-                        <div class="icon" style="font-size: 36px; color: #17a2b8;">
-                            <i class="bi bi-bar-chart-fill"></i>
-                        </div>
-                        <p style="font-size: 32px; font-weight: bold; color: #000;">30</p>
-                        <h6 style="color: #000;">Jumlah Hari ini</h6>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
+    
 
-    <section id="contact" class="about-section"
-             style="display: flex; align-items: center; justify-content: center; padding-bottom: 100px;">
-        <div class="blue-decoration" style="padding-bottom: 50px;"></div>
+    <section id="contact" class="contact-info" 
+             style="display: flex; align-items: center; justify-content: center;
+                    ">
+        <div class="blue-decoration"></div>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-4 d-flex flex-column justify-content-center">
@@ -225,10 +225,8 @@
                             <div>
                                 <h5>Call :</h5>
                                 <p>021 123</p>
-                              </div>
+                            </div>
                         </div>
-                        
-
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -239,14 +237,14 @@
         </div>
     </section>
 
-
     <!-- Bootstrap JS & Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
     <!-- Custom JS -->
-    <script src="script.js"></script> 
-
+    <script src="js/script.js"></script>
+    
+        
     <footer class="footer"><p>&copy; 2024 PT. PLN UID Jakarta Raya</p></footer>
 </body>
 </html>
