@@ -20,7 +20,7 @@ body {
 #home {
     height: 90vh;
     padding: 25px;
-    background: url(img/photos/bg_pln_1.jpeg);
+    background: url('img/photos/bg_pln_1.jpeg');
     background-attachment: fixed;
     background-size: cover;
     position: relative;
