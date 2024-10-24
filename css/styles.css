@@ -1,0 +1,296 @@
+body {
+    font-family: 'poppins',sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* ------------------ Navigation Bar ------------------ */
+.navbar {
+    background: linear-gradient(90deg, #14A2B8, #1291A6, #0A5D6F);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {  
+    font-size: 1rem;
+    color: whitesmoke;}
+
+.navbar-brand:hover { 
+    color: white;
+}
+
+.nav-item .nav-link {
+    font-size: 0.9rem;
+    color: #d1f7f7;
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.nav-item .nav-link:hover {
+    color: white; /* Warna sedikit lebih terang */
+    text-decoration: underline;
+}
+#btn-login {
+    background-color: #1291A6; border-color: #1291A6;
+    color: #d1f7f7;
+}
+
+button:focus, .nav-link:focus {
+    outline: 2px solid #1291A6;
+    outline-offset: 2px;
+}
+
+
+/* ------------------  Home Section  ------------------ */
+#home {
+    height: auto;
+    min-height: 90vh;
+    padding: 25px;
+    background-size: cover;
+    position: relative;
+}
+
+
+#home h1{
+    color: white;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4),
+                 0px 0px 20px rgba(0, 0, 0, 0.4),
+                 0px 0px 40px rgba(0, 0, 0, 0.4),
+                 0px 0px 80px rgba(0, 0, 0, 0.4);
+    font-weight: bold;
+    font-size: 3rem;               
+}
+
+#home h5 {
+    font-size:  1.25rem;
+    font-weight: normal;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4),
+                 0px 0px 20px rgba(0, 0, 0, 0.4),
+                 0px 0px 40px rgba(0, 0, 0, 0.4),
+                 0px 0px 80px rgba(0, 0, 0, 0.4);
+}
+
+#home button {
+    color: #007b8f;
+    background-color: white;
+    border: none;
+    padding: 10px 50px;
+    border-radius: 25px;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+#home button:hover {
+    text-shadow: 0px 0px 10px rgba(0, 217, 224, 0.4),
+                 0px 0px 20px rgba(0, 217, 224, 0.4),
+                 0px 0px 40px rgba(0, 217, 224, 0.4),
+                 0px 0px 80px rgba(0, 217, 224, 0.4);
+    box-shadow:  0px 0px 10px rgba(255, 255, 255, 0.4),
+                 0px 0px 20px rgba(255, 255, 255, 0.4),
+                 0px 0px 40px rgba(255, 255, 255, 0.4),
+                 0px 0px 80px rgba(255, 255, 255, 0.4);
+}
+
+#carouselExampleDark {
+    height: 380px;
+    margin-bottom: 50px;
+}
+
+.carousel-inner {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 80% 100%, 0 100%);
+}
+
+
+#home .container-fluid:nth-child(2){
+    background: rgba(255, 255, 233, 0.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 10px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.row-about{
+    justify-content: center;
+}
+
+.stat-box {
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+/* ------------------ Abaut Section  ------------------ */
+#about p {
+    text-align: justify;
+}
+
+.about-section {
+    background-color: #f5f5f5;
+    padding: 60px 0;
+}
+
+.about-section .row {
+    display: flex; 
+    align-items: stretch;
+    min-height: 300px;
+}
+
+.about-section .col-md-6 {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    padding: 20px;
+   
+}
+
+.image-container {
+    aspect-ratio: 16 / 9;
+    max-height: 250px;
+    overflow: hidden;
+    
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+/* ------------------ Abaut Section  ------------------ */
+
+#contact {   
+    background-color: whitesmoke;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding-right: 100px;
+    padding-left: 100px;
+    padding-bottom: 50px;
+}
+
+/* ------------------     Footer     ------------------ */
+
+.footer {
+    background: linear-gradient(90deg, #14A2B8, #1291A6, #0A5D6F);
+    padding: 10px 15px; /* Kurangi padding agar lebih ringkas */
+    color: white;
+    font-size: 12px; /* Ukuran font lebih kecil */
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0;
+    position: relative;
+}
+
+/* Responsif di Layar Kecil */
+
+
+/*----*/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.active { display: flex; }
+
+
+.form-container {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 35%;
+    border-radius: 10px;
+}
+
+
+.map-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Rasio 16:9 */
+    height: 0;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@media (max-width: 576px) {
+    .navbar-nav {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    .navbar-brand {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    .btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+    #contact {
+        padding: 20px;
+    }
+    .footer {
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+    .form-container {
+        width: 80%;
+        padding: 15px;
+    }
+    .carousel-inner {
+        clip-path: none;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 767px) {
+    #home {
+        background-attachment: scroll;
+    }
+}
+
+@media (min-width: 768px) {
+    #home {
+        background-attachment: fixed;
+        display: flex;
+    }
+
+    #home .container-fluid:nth-child(2){
+        position: absolute;
+        padding: 10px;
+        bottom: 7%;
+        width: 95%;
+        right: 0;
+        left: 0;
+    }
+
+}
