@@ -133,7 +133,7 @@ button:focus, .nav-link:focus {
     margin-bottom: 0;
 }
 
-/* ------------------ Abaut Section  ------------------ */
+/* ------------------ About Section  ------------------ */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -201,7 +201,7 @@ button:focus, .nav-link:focus {
 }
 
 
-/* ------------------ Abaut Section  ------------------ */
+/* ------------------ Contact Section  ------------------ */
 
 #contact {   
     background-color: whitesmoke;
