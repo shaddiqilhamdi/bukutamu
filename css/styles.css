@@ -44,10 +44,8 @@ button:focus, .nav-link:focus {
 /* ------------------  Home Section  ------------------ */
 #home {
     height: auto;
-    min-height: 95vh;
+    min-height: 90vh;
     padding: 25px;
-    background: linear-gradient(to right, rgba(10, 93, 111, 0.8), rgba(20, 162, 184, 0.7)),
-                url('img/bg_pln_1.jpeg');
     background-size: cover;
     position: relative;
 }
@@ -135,40 +133,14 @@ button:focus, .nav-link:focus {
     margin-bottom: 0;
 }
 
-/* ------------------ About Section  ------------------ */
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-#about {
-    height: auto;
-    min-height: 80vh;
-    background: white;
-    justify-content: center;
-    align-content: center;
-    animation: fadeIn 1.5s ease-in-out; 
-}
-
-#about .container {
-    border-radius: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    padding: 60px;
-    height: 80%;
-    width: auto;
-    animation: fadeIn 2s ease-in-out;
-
-}
-   
+/* ------------------ Abaut Section  ------------------ */
 #about p {
     text-align: justify;
+}
+
+.about-section {
+    background-color: #f5f5f5;
+    padding: 60px 0;
 }
 
 .about-section .row {
@@ -189,8 +161,6 @@ button:focus, .nav-link:focus {
     aspect-ratio: 16 / 9;
     max-height: 250px;
     overflow: hidden;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
     
 }
 
@@ -198,32 +168,20 @@ button:focus, .nav-link:focus {
     width: 100%;
     height: auto;
     object-fit: cover;
-
 }
 
 
-/* ------------------ Contact Section  ------------------ */
+/* ------------------ Abaut Section  ------------------ */
 
 #contact {   
     background-color: whitesmoke;
     align-items: center;
     justify-content: center;
     height: auto;
-    padding: 50px 100px;
+    padding-right: 100px;
+    padding-left: 100px;
+    padding-bottom: 50px;
 }
-
-.contact-info {
-    font-size: 14px;
-    color: #1291A6;
-    text-decoration: none;
-}
-
-.contact-info .bi {
-    margin-right: 20px;
-    font-size: 16px;
-    
-}
-
 
 /* ------------------     Footer     ------------------ */
 
@@ -339,13 +297,4 @@ button:focus, .nav-link:focus {
         left: 0;
     }
 
-}
-
-@media (max-width: 576px) {
-    .map-container {
-        padding-bottom: 56.25%; /* Rasio 16:9 untuk layar kecil */
-    }
-    #about .container {
-        padding: 20px;
-    }
 }
