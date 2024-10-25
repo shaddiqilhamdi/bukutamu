@@ -50,6 +50,10 @@ button:focus, .nav-link:focus {
     position: relative;
 }
 
+#home .container-fluid:nth-child(1) {
+    margin-top: 25px;
+}
+
 
 #home h1{
     color: white;
