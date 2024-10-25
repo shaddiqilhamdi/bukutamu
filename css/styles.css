@@ -134,6 +134,36 @@ button:focus, .nav-link:focus {
 }
 
 /* ------------------ Abaut Section  ------------------ */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#about {
+    height: auto;
+    min-height: 80vh;
+    background: white;
+    justify-content: center;
+    align-content: center;
+    animation: fadeIn 1.5s ease-in-out; 
+}
+
+#about .container {
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 60px;
+    height: 80%;
+    width: auto;
+    animation: fadeIn 2s ease-in-out;
+
+}
+
 #about p {
     text-align: justify;
 }
@@ -178,10 +208,21 @@ button:focus, .nav-link:focus {
     align-items: center;
     justify-content: center;
     height: auto;
-    padding-right: 100px;
-    padding-left: 100px;
-    padding-bottom: 50px;
+    padding: 50px 100px;
 }
+
+.contact-info {
+    font-size: 14px;
+    color: #1291A6;
+    text-decoration: none;
+}
+
+.contact-info .bi {
+    margin-right: 20px;
+    font-size: 16px;
+    
+}
+
 
 /* ------------------     Footer     ------------------ */
 
