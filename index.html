@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Buku Tamu</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/Logo_PLN.png" rel="icon">
+  <link href="assets/img/Logo_PLN.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Bootslander
+  * Template URL: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/Logo_PLN.png" alt="Logo PLN" height="50px">
+        <h1 class="sitename">Buku Tamu
+          
+        </h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://shaddiqilhamdi.github.io/bukutamu-admin/" target="_blank">Login Admin</a></li>
+          
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+      <img src="assets/img/hero-bg-2.jpg" alt="" class="hero-bg">
+
+      <div class="container">
+        <div class="row gy-4 justify-content-between">
+          <div class="col-lg-4 order-lg-last hero-img" data-aos="zoom-out" data-aos-delay="100">
+            <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+          </div>
+
+          <div class="col-lg-6  d-flex flex-column justify-content-center" data-aos="fade-in">
+            <h1>Selamat Datang <br> <span>di PLN UID JAYA</span></h1>
+            <p>Silakan isi form berikut untuk melanjutkan kunjungan Anda.
+              Data Anda akan dicatat untuk keperluan registrasi</p>
+            <div class="d-flex">
+              <a type="button" class="btn-get-started" onclick="openGuestForm()" >Buku Tamu</a>
+              <a href="" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+        <defs>
+          <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+        </defs>
+        <g class="wave1">
+          <use xlink:href="#wave-path" x="50" y="3"></use>
+        </g>
+        <g class="wave2">
+          <use xlink:href="#wave-path" x="50" y="0"></use>
+        </g>
+        <g class="wave3">
+          <use xlink:href="#wave-path" x="50" y="9"></use>
+        </g>
+      </svg>
+    </section><!-- /Hero Section -->
+
+    <!-- Form Section (Now included within index.html) -->
+    <div id="guestFormModal" class="modal">
+      <div class="form-container">
+          <form id="guestForm">
+              <div class="mb-3">
+                  <label for="namaLengkap" class="form-label">Nama Tamu</label>
+                  <input type="text" class="form-control" id="namaLengkap" name="namaLengkap" placeholder="Masukkan Nama Lengkap" required>
+              </div>
+              <div class="mb-3">
+                  <label for="ponsel" class="form-label">Nomor Ponsel</label>
+                  <input type="text" class="form-control" id="ponsel" name="ponsel" placeholder="Masukkan nomor ponsel aktif" required>
+              </div>
+              <div class="mb-3">
+                  <label for="instansi" class="form-label">Instansi</label>
+                  <input type="text" class="form-control" id="instansi" name="instansi" placeholder="Masukkan Nama Instansi" required>
+              </div>
+              <div class="mb-3">
+                  <label for="alamat" class="form-label">Alamat</label>
+                  <textarea class="form-control" id="alamat" name="alamat" rows="2" placeholder="Masukkan Alamat" required></textarea>
+              </div>
+              <div class="mb-3">
+                  <label for="tujuan" class="form-label">Bertemu dengan</label>
+                  <input type="text" class="form-control" id="tujuan" name="tujuan" placeholder="Masukkan Tujuan Kunjungan" required>
+              </div>
+              <div class="mb-3">
+                  <label for="bidang" class="form-label">Bidang</label>
+                  <select class="form-select" id="bidang" name="bidang" required>
+                      <option selected disabled>Pilih Bidang Kunjungan</option>
+                  </select>
+              </div>
+              <div class="mb-3">
+                  <label for="keperluan" class="form-label">Keperluan</label>
+                  <textarea class="form-control" id="keperluan" name="keperluan" rows="2" placeholder="Masukkan Keperluan" required></textarea>
+              </div>
+              
+              <div class="d-flex justify-content-between">
+                  <button type="button" class="btn btn-secondary" onclick="closeGuestForm()">Batal</i></button>
+                  <div class="text-end">
+                      <button type="reset" class="btn btn-warning" onclick="clearForm()">Reset</button>
+                      <button type="submit" id="submitBtn" value="submit" class="btn btn-primary">Submit
+                          <span id="loading" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                      </button>
+                  </div>
+              </div>
+          </form>
+      </div>
+  </div>
+    
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row align-items-xl-center gy-5">
+
+          <div class="col-xl-5 content">
+            <h3>About Us</h3>
+            <h2><strong>Buku Tamu </strong>PLN UID Jakarta Raya</h2>
+            <p>Aplikasi Buku Tamu, PLN UID Jakarta Raya bertujuan untuk meningkatkan efisiensi dan kemudahan dalam pengelolaan kunjungan.
+              Setiap tamu yang berkunjung ke kantor PLN UID Jakarta Raya akan diminta untuk mengisi data secara digital melalui aplikasi ini, 
+              yang membantu mempercepat proses administrasi, meningkatkan akurasi pencatatan, serta mendukung keamanan dan kenyamanan bagi tamu maupun petugas. 
+              Aplikasi ini menjadi solusi modern untuk pengelolaan kunjungan di era digital.</p>
+            <a href="#" class="read-more"><span>Buku Tamu</span><i class="bi bi-arrow-right"></i></a>
+          </div>
+
+          <div class="col-xl-7">
+            <div class="row gy-4 icon-boxes">
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box">
+                  <i class="bi bi-buildings"></i>
+                  <h3>Keunggulan Buku Tamu Digital di PLN UID Jaya</h3>
+                  <p>"Aplikasi buku tamu digital mempermudah pencatatan dan pemantauan kunjungan secara real-time di PLN UID Jaya. Lebih cepat, aman, dan efisien!"</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon-box">
+                  <i class="bi bi-command"></i>
+                  <h3>Digitalisasi di PLN UID Jaya dengan Buku Tamu Digital</h3>
+                  <p>"PLN UID Jaya terus berinovasi! Dengan buku tamu digital, semua kunjungan lebih terkontrol dan mudah diakses."</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section light-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-journal-richtext"></i>
+            <div class="stats-item">
+              <span  id="totalTamuBulanIni" data-purecounter-start="0" data-purecounter-end="999" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Total tamu</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-bar-chart"></i>
+            <div class="stats-item">
+              <span id="rataRataPerHari" data-purecounter-start="0" data-purecounter-end="999" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Rata-rata</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-person-check"></i>
+            <div class="stats-item">
+              <span id="tamuHariIni" data-purecounter-start="0" data-purecounter-end="999" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Hari ini</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-people"></i>
+            <div class="stats-item">
+              <span id="totalTamuAktif" data-purecounter-start="0" data-purecounter-end="999" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Tamu Aktif</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <div><span></span> <span class="description-title">Contact</span></div>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6">
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3>Alamat</h3>
+                <p>Jl. M.I. Ridwan Rais No.1 7, RT.7/RW.1, <br>   Gambir, Kecamatan Gambir, Kota Jakarta Pusat, 10110</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Call Center:</h3>
+                <p>021 123</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-instagram flex-shrink-0"></i>
+              <div>
+                <h3>Instagram</h3>
+                <p><a href="https://www.instagram.com/pln_disjaya/" target="_blank" style="text-decoration: none; color: #1291A6;">@pln_disjaya </a></p>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+
+          <div class="col-lg-6">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6623.041135841982!2d106.82777173625645!3d-6.181418566326087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69edeb994debef%3A0x5591e51365dd9baf!2sPLN%20Unit%20Induk%20Distribusi%20Jakarta%20Raya!5e0!3m2!1sid!2sid!4v1727236186548!5m2!1sid!2sid" 
+                    width="600" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container copyright text-center mt-4">
+      <p>&copy; 2024 PT. PLN UID Jakarta Raya</p>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/script.js"></script>
+
+</body>
+</html>
