@@ -151,6 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const instansi = document.getElementById('instansi').value;
         const alamat = document.getElementById('alamat').value;
         const tujuan = document.getElementById('tujuan').value;
+        const bidang = document.getElementById('bidang').value;
         const keperluan = document.getElementById('keperluan').value;
         const tanggalMasuk = formatLocalDate(now);
         const jamMasuk = formatLocalTime(now);
@@ -159,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Formatted Time:', jamMasuk);
 
         // Validasi input
-        if (!namaLengkap || !ponsel || !instansi || !alamat || !tujuan || !keperluan) {
+        if (!namaLengkap || !ponsel || !instansi || !alamat || !tujuan || !bidang || !keperluan) {
             Swal.fire('Error!', 'Semua field wajib diisi!', 'error');
             return;
         }
@@ -175,6 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
             instansi: instansi,
             alamat: alamat,
             tujuan: tujuan,
+            bidang: bidang,
             keperluan: keperluan,
             tanggal_masuk: tanggalMasuk,
             jam_masuk: jamMasuk,
